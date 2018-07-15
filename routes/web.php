@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::redirect('/', '/contact', 301);
+
+Route::get('/contact', function () {
+  return view('contact');
 });
