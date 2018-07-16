@@ -1,7 +1,30 @@
+// Custom
+$custom-light-grey: rgb(239, 239, 239);
+$custom-grey: rgb(118, 118, 118);
+$custom-light-blue: rgb(105, 156, 192);
+$custom-white: rgb(236, 236, 236);
 
-// Body
-// $body-bg: #f5f8fa;
+// Bootstrap
+$black: #000;
+$white: #fff;
+$dark: $black;
+$font-size-base: .8rem;
+
+// Breadcrumbs
+$breadcrumb-bg: $custom-light-blue;
+$breadcrumb-active-color: $white;
+$breadcrumb-divider-color: $white;
+$breadcrumb-margin-bottom: 0;
+
+// Card
+$card-bg: $custom-light-grey;
+$card-border-color: $custom-light-grey;
 
 // Typography
 $font-family-sans-serif: "Monserrat", sans-serif;
-$font-family-serif: "Roboto Slabl", serif;
+$font-family-serif: "Roboto Slab", serif;
+
+// Navbar
+$navbar-brand-font-size: 2rem;
+$navbar-padding-x: 0;
+$navbar-padding-y: 2rem;

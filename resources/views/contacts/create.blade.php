@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-  <form action="{{ url('contact') }}" method="POST">
-    {{ csrf_field() }}
+  <form id="contact" action="{{ url('contact') }}" method="POST">
+    {{-- {{ csrf_field() }} --}}
+    @csrf
     <div class="form-row">
       <div class="form-group col">
         <label for="firstName">First Name</label>
@@ -29,6 +30,6 @@
         <input type="text" class="form-control" id="comments" name="comments">
       </div>
     </div>
-    <button type="submit" class="btn btn-primary justify-content-end">Submit</button>
+    <button type="submit" class="btn btn-default justify-content-end">Submit</button>
   </form>
 @endsection

@@ -8,7 +8,53 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+// Colors
+.bg-custom-light-blue {
+  background-color: $custom-light-blue;
+}
+.navbar-light .navbar-brand {
+  color: $custom-light-blue;
+}
+
+// Typography
+aside,
+footer,
+label,
+.breadcrumb {
+  font-family: $font-family-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand,
+.nav-link, {
+  text-transform: uppercase;
+}
+
+// General
+.page {
+  a, h1 {
+    color: $white;
+  }
+}
+
+footer {
+  font-size: 80%;
+
+  a {
+    color: $white;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: $custom-light-grey;
+    }
+  }
+
+  em {
+    text-transform: lowercase;
+  }
+
+  h4, h5 {
+    font-family: $font-family-sans-serif;
+  }
 }
