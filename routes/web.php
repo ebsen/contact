@@ -12,7 +12,5 @@
 */
 
 Route::redirect('/', '/contact', 301);
-
-Route::get('/contact', function () {
-  return view('contact');
-});
+Route::get('contact', 'ContactController@create');
+Route::post('contact', 'ContactController@store');
