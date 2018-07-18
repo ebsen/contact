@@ -41,7 +41,8 @@ class ContactController extends Controller
     $contact->comments   = $validatedData['comments'];
     $contact->save();
 
-    // return redirect('/contact')->withInput();
-    return redirect('/contact');
+    return response()->json([
+      'status' => 'Wonderful! Thanks for the feedback.',
+    ]);
   }
 }

@@ -1,8 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+  {{-- Alerts --}}
+  <div id="success" class="d-none col-12 alert alert-success" role="alert"></div>
+  <div id="errors" class="d-none col-12 alert alert-danger" role="alert">
+    <ul class="mb-0"></ul>
+  </div>
+
+  {{-- Form --}}
   <form id="contact" action="{{ url('contact') }}" method="POST">
-    {{-- {{ csrf_field() }} --}}
     @csrf
     <div class="form-row">
       <div class="form-group col">

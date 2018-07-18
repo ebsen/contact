@@ -6,36 +6,32 @@
 
 require("./bootstrap");
 
-// console.log("Hi");
-// $(document).ready(function() {
-//   console.log("Hello!!!!!");
+$(document).ready(function() {
+  var form = $("#contact");
 
-//   $("#contact").submit(function(event) {
-//     var data = $(this).serialize();
-//     console.log(data);
+  form.on("submit", function(event) {
+    event.preventDefault();
 
-//     $.ajax({
-//       type: "POST",
-//       url: "/contact",
-//       data: $("#contact").serialize(),
-//       success: function(data) {
-//         console.log(data);
-//       }
-//     });
-//     event.preventDefault();
-//   });
-// });
-
-// window.Vue = require('vue');
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-// Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-// const app = new Vue({
-//     el: '#app'
-// });
+    $.ajax({
+      type: "POST",
+      url: form.attr("action"),
+      data: form.serializeArray()
+    })
+      .done(function(response) {
+        $("#errors").addClass("d-none");
+        $("#success")
+          .removeClass("d-none")
+          .text(response.status);
+      })
+      .fail(function(response) {
+        var errors = response.responseJSON.errors;
+        $("#success").addClass("d-none");
+        $("#errors").removeClass("d-none");
+        for (var key in errors) {
+          if (errors.hasOwnProperty(key)) {
+            $("#errors ul").append("<li>" + errors[key] + "</li>");
+          }
+        }
+      });
+  });
+});
